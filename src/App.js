@@ -1,6 +1,6 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -23,4 +23,3 @@ function App() {
 }
 
 export default App;
-export { App };
