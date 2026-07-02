@@ -1,46 +1,54 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 function Common({ name, imgsrc, visit, btname }) {
   return (
-    <>
-      <section id="header" className="d-flex align-items-center">
-        <div className="container-fluid nav_bg">
-          <div className="row">
-            <div className="col-10 mx-auto">
-              <div className="row">
-                <div className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                  <h1>
-                    {name}
-                    <strong className="brand-name"> TrueByte. </strong>
-                  </h1>
+    <section id="header" className="d-flex align-items-center">
+      <div className="container-fluid nav_bg">
+        <div className="row">
+          <div className="col-10 mx-auto">
+            <div className="row">
+              <div className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
+                <h1>
+                  {name}
+                  <strong className="brand-name"> TrueByte. </strong>
+                </h1>
 
-                  <h2 className="my-3">
-                    We're a team of talented developers that can help your
-                    business grow!
-                  </h2>
+                <h2 className="my-3">
+                  We're a team of talented developers that can help your
+                  business grow!
+                </h2>
 
-                  <div className="mt-3">
-                    <NavLink to={visit} className="btn-get-started">
-                      {btname}
-                    </NavLink>
-                  </div>
+                <div className="mt-3">
+                  <NavLink to={visit} className="btn-get-started">
+                    {btname}
+                  </NavLink>
                 </div>
+              </div>
 
-                <div className="col-lg-6 order-1 order-lg-2 header-img">
-                  <img
-                    src={imgsrc}
-                    className="img-fluid animated"
-                    alt="HomeImg"
-                  />
-                </div>
+              <div className="col-lg-6 order-1 order-lg-2 header-img">
+                <img
+                  src={imgsrc}
+                  className="img-fluid animated"
+                  alt={name}
+                />
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
+// PropTypes para validación de props
+Common.propTypes = {
+  name: PropTypes.string.isRequired,
+  imgsrc: PropTypes.string.isRequired,
+  visit: PropTypes.string.isRequired,
+  btname: PropTypes.string.isRequired,
+};
+
 export default Common;
+export { Common };
